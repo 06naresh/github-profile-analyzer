@@ -1,6 +1,7 @@
 const Profile = require('../models/Profile');
 const { fetchUser, fetchRepos, analyzeRepos } = require('../services/githubService');
 
+// Analyze and insert/update a GitHub profile
 async function analyzeProfile(req, res) {
     const { username } = req.params;
 
@@ -29,8 +30,33 @@ async function analyzeProfile(req, res) {
         const profile = await Profile.upsert(profileData);
         res.json(profile);
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Failed to analyze profile' });
     }
 }
 
-module.exports = { analyzeProfile };
+// Fetch all stored profiles
+async function getAllProfiles(req, res) {
+    try {
+        const profiles = await Profile.findAll();
+        res.json(profiles);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch profiles' });
+    }
+}
+
+// Fetch a single profile by username
+async function getProfileByUsername(req, res) {
+    const { username } = req.params;
+    try {
+        const profile = await Profile.findOne({ where: { username } });
+        if (!profile) {
+            return res.status(404).json({ error: 'Profile not found' });
+        }
+        res.json(profile);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch profile' });
+    }
+}
+
+module.exports = { analyzeProfile, getAllProfiles, getProfileByUsername };
