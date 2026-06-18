@@ -23,7 +23,7 @@ Backend service that analyzes GitHub user profiles using the GitHub API and stor
 
 1. Clone repo
    ```bash
-   git clone https://github.com/naresh06/github-profile-analyzer.git
+   git clone https://github.com/06naresh/github-profile-analyzer.git
    cd github-profile-analyzer
    ```
 
@@ -35,11 +35,11 @@ npm install
 
 ## Configure .env (use .env.example as reference)
 
-DB_HOST=your-db-host
-DB_PORT=your-db-port
-DB_USER=your-db-user
-DB_PASS=your-db-password
-DB_NAME=defaultdb
+- DB_HOST=your-db-host
+- DB_PORT=your-db-port
+- DB_USER=your-db-user
+- DB_PASS=your-db-password
+- DB_NAME=defaultdb
 
 ## Run server
 
