@@ -1,0 +1,94 @@
+{
+  "info": {
+    "_postman_id": "25d25a0c-1ba1-44e6-96d1-e4ca84e3cefc",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56007246",
+    "_collection_link": "https://go.postman.co/collection/56007246-25d25a0c-1ba1-44e6-96d1-e4ca84e3cefc?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Analyze Profile",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://github-profile-analyzer-4yrj.onrender.com/api/profiles/analyze/octocat",
+          "protocol": "https",
+          "host": [
+            "github-profile-analyzer-4yrj",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "profiles",
+            "analyze",
+            "octocat"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Profiles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://github-profile-analyzer-4yrj.onrender.com/api/profiles",
+          "protocol": "https",
+          "host": [
+            "github-profile-analyzer-4yrj",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "profiles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://github-profile-analyzer-4yrj.onrender.com/api/profiles/octocat",
+          "protocol": "https",
+          "host": [
+            "github-profile-analyzer-4yrj",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "profiles",
+            "octocat"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

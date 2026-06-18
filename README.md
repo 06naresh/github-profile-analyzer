@@ -65,4 +65,4 @@ Collection: postman_collection.json
 
 ## Deployment
 
-Live API URL:
+Live API URL: https://github-profile-analyzer-4yrj.onrender.com
