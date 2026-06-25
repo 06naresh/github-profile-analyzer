@@ -2,7 +2,7 @@
 
 ## Overview
 
-Backend service that analyzes GitHub user profiles using the GitHub API and stores insights in MySQL.
+Backend service that analyzes GitHub user profiles using the GitHub API and stores insights in MySQL
 
 ## Tech Stack
 
